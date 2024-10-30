@@ -61,22 +61,16 @@
     <h1>Contact Professionnel</h1>
     <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="First name" aria-label="First name" required>
+            <label for="inputEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="First name" id="inputEmail" aria-label="First name" required>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
+            <label for="inputTel" class="form-label">Tel</label>
+          <input type="tel" class="form-control" id="inputTel" placeholder="Last name" aria-label="Last name" required>
         </div>
       </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
-    </div>
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity" required>
-    </div>
     <div class="col-md-4">
-      <label for="inputState" class="form-label">Moyen de transpot</label>
+      <label for="inputState" class="form-label">Poste</label>
       <select id="inputState" class="form-select" required>
         <option selected>Choose...</option>
         <option>...</option>
@@ -94,6 +88,7 @@
       </div>
     </div>
     <div class="col-12">
+      <button type="button" class="btn btn-primary">precedent</button>
       <button type="button" class="btn btn-primary">continué</button>
       
     </div>

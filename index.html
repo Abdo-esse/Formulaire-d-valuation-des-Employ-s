@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire de valuatio des Employs</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body class="container">
     <!------------------------------------- Debut de formulaire ------------------------------------->
-    <form class="row g-3" >
+    <form class="row g-3 section" >
 <!------------------------------------- Debut  de section des information perssonelle ------------------------------------->
-      <div class="infoperssonelle">
+      <div class="personnelles" id="per">
         <h1>Informations Personnelles</h1>
         <div class="row">
             <div class="col">
@@ -50,14 +51,14 @@
           </div>
         </div>
         <div class="col-12">
-          <button type="button" class="btn btn-primary">continué</button>
+          <button type="button" class="btn btn-primary" onclick="masquer1()">continué</button>
           
         </div>
       </div>
 <!------------------------------------- fin  de section des information perssonelle ------------------------------------->
       
 <!------------------------------------- Debut  de section des information proffetionnelle ------------------------------------->
-<div class="infoperssonelle">
+<div class="professionnel" id="pro">
     <h1>Contact Professionnel</h1>
     <div class="row">
         <div class="col">
@@ -96,28 +97,13 @@
 <!------------------------------------- fin  de section des information proffetionnel ------------------------------------->
 
 <!------------------------------------- Debut  de section de Retour d’Expérience  ------------------------------------->
-<div class="infoperssonelle">
+<div class="commentaire" id="com">
     <h1>Retour d’Expérience</h1>
-    <div class="row">
-        <div class="col">
-            <label for="inputEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" placeholder="First name" id="inputEmail" aria-label="First name" required>
-        </div>
-        <div class="col">
-            <label for="inputTel" class="form-label">Tel</label>
-          <input type="tel" class="form-control" id="inputTel" placeholder="Last name" aria-label="Last name" required>
-        </div>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Comments</label>
       </div>
-    <div class="col-md-4">
-      <label for="inputState" class="form-label">Poste</label>
-      <select id="inputState" class="form-select" required>
-        <option selected>Choose...</option>
-        <option>...</option>
-        <option>...</option>
-        <option>...</option>
-        <option>...</option>
-      </select>
-    </div>
+    
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck" required>
@@ -132,8 +118,9 @@
       
     </div>
   </div>
-<!------------------------------------- fin  de section des Retour d’Expérience  ------------------------------------->
-
+<!------------------------------------- fin  de section de Retour d’Expérience  ------------------------------------->
+        <button type="submit" class="btn btn-primary" id="envoyer">Envoyer</button>
     </form>
+    <script src="script.js"></script>
 </body>
 </html>

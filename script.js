@@ -3,10 +3,11 @@ function masquer2() {
   document.getElementById("pro").style.display = "none";
   document.getElementById("per").style.display = "block";
 }
-function masquer3() {
+function masquer1(){
   document.getElementById("pro").style.display = "none";
   document.getElementById("com").style.display = "block";
 }
+
 function masquer4() {
   document.getElementById("com").style.display = "none";
   document.getElementById("pro").style.display = "block";
@@ -51,8 +52,9 @@ document.querySelector("[name='btn']").onclick = function (e) {
 
   if (Ci_ty.value !== "" && Ci_ty.value.length <= 10) {
     Cityvali = true;
-    console.log("valid");
+    
    }
+   
 
   if (
     firstVali === false || lastVali === false || Addressvali === false || Cityvali === false ) {
@@ -66,4 +68,30 @@ document.querySelector("[name='btn']").onclick = function (e) {
 
 };
 
+let em_ail = document.querySelector("[name='email']");
 
+let te_l = document.querySelector("[name='tel']");
+
+document.querySelector("[name='btn2']").onclick = function (ev){
+  let emailvali = false;
+  let telvali = false ;
+  // if (em_ail.value !== "" && em_ail.value.length >= 10) {
+  //   // console.log(em_ail.value);
+  //   // console.log(em_ail.value.length);
+    
+    
+  //   emailvali === true;
+  // }
+  // if (te_l.value !== "" ) {
+  //   console.log(te_l.value);
+  //   console.log(te_l.value.length);
+  //   telvali === true;
+  // }
+ if (emailvali === false || telvali === false) {
+  ev.preventDefault();
+ }
+ if (emailvali === true && telvali === true) {
+  document.getElementById("pro").style.display = "none";
+  document.getElementById("com").style.display = "block";
+ }
+};

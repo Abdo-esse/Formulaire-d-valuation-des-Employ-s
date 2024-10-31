@@ -1,8 +1,8 @@
 
-// function masquer2() {
-//   document.getElementById("pro").style.display = "none";
-//   document.getElementById("per").style.display = "block";
-// }
+function masquer2() {
+  document.getElementById("pro").style.display = "none";
+  document.getElementById("per").style.display = "block";
+}
 function masquer1(){
   document.getElementById("pro").style.display = "none";
   document.getElementById("com").style.display = "block";
@@ -82,7 +82,22 @@ document.querySelector("[name='btn2']").onclick = function (ev){
  }
 };
 
-// let 
-// document.querySelector("[name='btn3']").onclick = function(event){
-//   let comment = false;
-// }
+let text = document.querySelector("[name='textarea']");
+
+document.querySelector("[name='btn3']").onclick = function(event){
+  let comment = false;
+  if (text.value !== "" ) {
+    comment=true;
+  }
+  if (comment===true) {
+    document.getElementById("per").style.display = "block";
+  document.getElementById("pro").style.display = "block";
+  document.getElementById("com").style.display = "block";
+
+  document.querySelectorAll(".bto").forEach((s) => {
+    s.style.display = "none";
+  });
+  document.getElementById("envoyer").style.display = "block";
+    
+  }
+}

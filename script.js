@@ -1,8 +1,8 @@
 
-function masquer2() {
-  document.getElementById("pro").style.display = "none";
-  document.getElementById("per").style.display = "block";
-}
+// function masquer2() {
+//   document.getElementById("pro").style.display = "none";
+//   document.getElementById("per").style.display = "block";
+// }
 function masquer1(){
   document.getElementById("pro").style.display = "none";
   document.getElementById("com").style.display = "block";
@@ -54,12 +54,6 @@ document.querySelector("[name='btn']").onclick = function (e) {
     Cityvali = true;
     
    }
-   
-
-  if (
-    firstVali === false || lastVali === false || Addressvali === false || Cityvali === false ) {
-    e.preventDefault();
-   }
   if (
     firstVali === true && lastVali === true && Addressvali === true && Cityvali === true) {
     document.getElementById("per").style.display = "none";
@@ -75,23 +69,20 @@ let te_l = document.querySelector("[name='tel']");
 document.querySelector("[name='btn2']").onclick = function (ev){
   let emailvali = false;
   let telvali = false ;
-  // if (em_ail.value !== "" && em_ail.value.length >= 10) {
-  //   // console.log(em_ail.value);
-  //   // console.log(em_ail.value.length);
-    
-    
-  //   emailvali === true;
-  // }
-  // if (te_l.value !== "" ) {
-  //   console.log(te_l.value);
-  //   console.log(te_l.value.length);
-  //   telvali === true;
-  // }
- if (emailvali === false || telvali === false) {
-  ev.preventDefault();
- }
- if (emailvali === true && telvali === true) {
+  if (em_ail.value !== "" && em_ail.value.length >= 10) {
+     emailvali = true;
+  }
+  if (te_l.value !== ""  && te_l.value.length == 10) {
+     telvali =true;
+  }
+
+ if( emailvali === true && telvali === true ) {
   document.getElementById("pro").style.display = "none";
   document.getElementById("com").style.display = "block";
  }
 };
+
+// let 
+// document.querySelector("[name='btn3']").onclick = function(event){
+//   let comment = false;
+// }

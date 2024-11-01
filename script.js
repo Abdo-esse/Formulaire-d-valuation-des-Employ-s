@@ -3,25 +3,13 @@ function masquer2() {
   document.getElementById("pro").style.display = "none";
   document.getElementById("per").style.display = "block";
 }
-function masquer1(){
-  document.getElementById("pro").style.display = "none";
-  document.getElementById("com").style.display = "block";
-}
+
 
 function masquer4() {
   document.getElementById("com").style.display = "none";
   document.getElementById("pro").style.display = "block";
 }
-function continu() {
-  document.getElementById("per").style.display = "block";
-  document.getElementById("pro").style.display = "block";
-  document.getElementById("com").style.display = "block";
 
-  document.querySelectorAll(".bto").forEach((s) => {
-    s.style.display = "none";
-  });
-  document.getElementById("envoyer").style.display = "block";
-}
 
 let first_Name = document.querySelector("[name='firstName']");
 
@@ -32,13 +20,17 @@ let Add_ress = document.querySelector("[name='Address']");
 let Ci_ty = document.querySelector("[name='City']");
 
 let Ch_eck = document.querySelector("[name='Check']");
+let button = document.querySelector("[name='btn']");
+
+
+
 
 document.querySelector("[name='btn']").onclick = function (e) {
   let firstVali = false;
   let lastVali = false;
   let Addressvali = false;
   let Cityvali = false;
-  // let  Checkvali = false
+  let  Checkvali = false;
 
   if (first_Name.value !== "" && first_Name.value.length <= 10) {
      firstVali = true;
@@ -54,8 +46,14 @@ document.querySelector("[name='btn']").onclick = function (e) {
     Cityvali = true;
     
    }
+   if (Ch_eck.checked) {
+    Checkvali = true;
+    
+   }
   if (
-    firstVali === true && lastVali === true && Addressvali === true && Cityvali === true) {
+    firstVali === true && lastVali === true && Addressvali === true && Cityvali === true && Checkvali === true ) {
+    
+
     document.getElementById("per").style.display = "none";
   document.getElementById("pro").style.display = "block";
   }
@@ -69,14 +67,20 @@ let te_l = document.querySelector("[name='tel']");
 document.querySelector("[name='btn2']").onclick = function (ev){
   let emailvali = false;
   let telvali = false ;
+  let  Checkvali = false;
+  
   if (em_ail.value !== "" && em_ail.value.length >= 10) {
      emailvali = true;
   }
   if (te_l.value !== ""  && te_l.value.length == 10) {
      telvali =true;
   }
-
- if( emailvali === true && telvali === true ) {
+  if (Ch_eck.checked) {
+    Checkvali = true;
+    
+   }
+  
+  if( emailvali === true && telvali === true && Checkvali === true) {
   document.getElementById("pro").style.display = "none";
   document.getElementById("com").style.display = "block";
  }
@@ -86,10 +90,18 @@ let text = document.querySelector("[name='textarea']");
 
 document.querySelector("[name='btn3']").onclick = function(event){
   let comment = false;
+  let  Checkvali = false;
   if (text.value !== "" ) {
     comment=true;
   }
-  if (comment===true) {
+  if (Ch_eck.checked) {
+    Checkvali = true;
+    
+    
+    
+    
+   }
+  if (comment===true && Checkvali === true) {
     document.getElementById("per").style.display = "block";
   document.getElementById("pro").style.display = "block";
   document.getElementById("com").style.display = "block";
@@ -101,3 +113,41 @@ document.querySelector("[name='btn3']").onclick = function(event){
     
   }
 }
+// // let 
+// let span = document.getElementById("span");
+// function validation(){
+  
+//     if (first_Name.value !== "" && first_Name.value.length <= 10) {
+//       span.textContent = "hello";
+      
+//     }
+//     // else {
+//     //   span.textContent = "hello";
+//     //   span.style.color ="green"
+//     // }
+    
+// }
+const input = document.querySelectorAll('.inpu');
+const resultat = document.querySelectorAll('.span');
+
+input.forEach(item => {
+  resultat.forEach(item2 =>{
+    item.oninput = function() {
+      if (item.value!=="" && item.value.length<=10) {
+        item2.textContent = "valid";
+        item2.style.color = "green"
+        item.style.border = " 2px solid green"
+      }
+      else {
+        item2.textContent = "hello";
+        item2.style.color = "red"
+        item.style.border = " 2px solid red"
+       }
+    
+        // Met à jour le contenu du paragraphe
+    };
+  })
+})
+
+
+ 

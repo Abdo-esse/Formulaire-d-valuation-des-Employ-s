@@ -63,6 +63,7 @@ document.querySelector("[name='btn']").onclick = function (e) {
 let em_ail = document.querySelector("[name='email']");
 
 let te_l = document.querySelector("[name='tel']");
+let Ch_eck2 = document.querySelector("[name='Check2']");
 
 document.querySelector("[name='btn2']").onclick = function (ev){
   let emailvali = false;
@@ -75,7 +76,7 @@ document.querySelector("[name='btn2']").onclick = function (ev){
   if (te_l.value !== ""  && te_l.value.length == 10) {
      telvali =true;
   }
-  if (Ch_eck.checked) {
+  if (Ch_eck2.checked) {
     Checkvali = true;
     
    }
@@ -87,20 +88,16 @@ document.querySelector("[name='btn2']").onclick = function (ev){
 };
 
 let text = document.querySelector("[name='textarea']");
-
+let Ch_eck3 = document.querySelector("[name='Check3']");
 document.querySelector("[name='btn3']").onclick = function(event){
   let comment = false;
   let  Checkvali = false;
   if (text.value !== "" ) {
     comment=true;
   }
-  if (Ch_eck.checked) {
+  if (Ch_eck3.checked) {
     Checkvali = true;
-    
-    
-    
-    
-   }
+  }
   if (comment===true && Checkvali === true) {
     document.getElementById("per").style.display = "block";
   document.getElementById("pro").style.display = "block";
@@ -113,41 +110,21 @@ document.querySelector("[name='btn3']").onclick = function(event){
     
   }
 }
-// // let 
-// let span = document.getElementById("span");
-// function validation(){
-  
-//     if (first_Name.value !== "" && first_Name.value.length <= 10) {
-//       span.textContent = "hello";
-      
-//     }
-//     // else {
-//     //   span.textContent = "hello";
-//     //   span.style.color ="green"
-//     // }
-    
-// }
-const input = document.querySelectorAll('.inpu');
-const resultat = document.querySelectorAll('.span');
-
-input.forEach(item => {
-  resultat.forEach(item2 =>{
-    item.oninput = function() {
-      if (item.value!=="" && item.value.length<=10) {
-        item2.textContent = "valid";
-        item2.style.color = "green"
-        item.style.border = " 2px solid green"
-      }
-      else {
-        item2.textContent = "hello";
-        item2.style.color = "red"
-        item.style.border = " 2px solid red"
-       }
-    
-        // Met à jour le contenu du paragraphe
-    };
-  })
-})
-
-
  
+const inputs = document.querySelectorAll('.inpu');
+const resultats = document.querySelectorAll('.span');
+
+inputs.forEach((input, index) => {
+  input.oninput = function() {
+    const resultat = resultats[index]; // Récupère le résultat correspondant
+    if (input.value !== "" && input.value.length <= 10) {
+      resultat.textContent = "valid";
+      resultat.style.color = "green";
+      input.style.border = "2px solid green";
+    } else {
+      resultat.textContent = "Incorrect";
+      resultat.style.color = "red";
+      input.style.border = "2px solid red";
+    }
+  };
+});
